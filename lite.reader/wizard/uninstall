@@ -1,0 +1,18 @@
+[
+  {
+    "stepTitle": "卸载确认",
+    "items": [
+      {
+        "type": "checkbox",
+        "field": "delete_data",
+        "label": "删除所有数据",
+        "options": [
+          {
+            "label": "会清空个人上传的小说和数据库 (请谨慎操作)",
+            "value": "true"
+          }
+        ]
+      }
+    ]
+  }
+]

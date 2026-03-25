@@ -1,0 +1,14 @@
+﻿appname=lite.reader
+version=1.1.2
+display_name=轻阅读
+desc=支持 TXT/EPUB/MOBI/AZW3/PDF/CBZ/CBR 的轻量级私人小说阅读器<br><br><a href="https://pan.quark.cn/s/2e5d0dc68d04">下载安卓应用</a><br><br>默认管理员账号：admin 默认管理员密码：admin123<br><br>交流QQ群：1072565705
+platform=arm
+maintainer=落地长安
+distributor=落地长安
+desktop_uidir=ui
+desktop_applaunchname=lite.reader.Application
+source=thirdparty
+ctl_stop=true
+install_dep_apps=nodejs_v22
+os_min_version = 1.1.8
+changelog=1.修复书库搜索丢失。<br>2.书库扫描与性能引擎重构。<br>3.注册密码二次确认。<br>4.书架文件夹样式修复。

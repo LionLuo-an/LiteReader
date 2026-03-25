@@ -1,0 +1,14 @@
+{
+    "data-share": {
+        "shares": [
+            {
+                "name": "lite.reader",
+                "permission": {
+                    "rw": [
+                        "lite.reader"
+                    ]
+                }
+            }
+        ]
+    }
+}

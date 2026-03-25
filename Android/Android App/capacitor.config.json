@@ -1,0 +1,12 @@
+{
+  "appId": "com.lightreader.app",
+  "appName": "轻阅读",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "http",
+    "cleartext": true,
+    "allowNavigation": [
+      "*"
+    ]
+  }
+}

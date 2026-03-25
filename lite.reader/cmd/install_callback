@@ -1,0 +1,35 @@
+#!/bin/bash
+# 安装回调 - 在解压后执行
+LOG="${TRIM_TEMP_LOGFILE:-/tmp/lite_reader_install_callback.log}"
+exec >> "$LOG" 2>&1
+set -x
+
+echo "=== 轻阅读 安装回调开始 ==="
+echo "时间: $(date)"
+echo "TRIM_PKGVAR: ${TRIM_PKGVAR}"
+
+# 确保 PKGVAR 目录存在
+mkdir -p "${TRIM_PKGVAR}"
+
+# 获取用户设置的端口（从安装向导）
+APP_PORT="${custom_port:-8082}"
+echo "用户设置端口: ${APP_PORT}"
+
+# 保存端口配置供 main 脚本使用
+echo "APP_PORT=${APP_PORT}" > "${TRIM_PKGVAR}/port.conf"
+echo "端口配置已保存到: ${TRIM_PKGVAR}/port.conf"
+
+# 验证写入
+if [ -f "${TRIM_PKGVAR}/port.conf" ]; then
+    cat "${TRIM_PKGVAR}/port.conf"
+    echo "端口配置验证成功"
+else
+    echo "警告：端口配置文件创建失败！"
+fi
+
+# 写入凭据标记文件，通知 Node.js 应用 Wizard 中的管理员凭据
+touch "${TRIM_PKGVAR}/.apply_credentials"
+echo "已创建凭据标记文件: ${TRIM_PKGVAR}/.apply_credentials"
+
+echo "=== 安装回调完成 ==="
+exit 0

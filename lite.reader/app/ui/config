@@ -1,0 +1,16 @@
+{
+    ".url": {
+        "lite.reader.Application": {
+            "title": "轻阅读",
+            "icon": "images/icon_{0}.png",
+            "type": "url",
+            "protocol": "http",
+            "port": "${custom_port}",
+            "url": "/",
+            "allUsers": true,
+            "control": {
+                "portPerm": "editable"
+            }
+        }
+    }
+}

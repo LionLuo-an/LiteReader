@@ -1,0 +1,102 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  /* 确保横向滚动时也隐藏滚动条 */
+  .overflow-x-auto::-webkit-scrollbar,
+  .overflow-x-scroll::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  .overflow-x-auto,
+  .overflow-x-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+input,
+textarea {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+
+.ancient-book-card {
+  background-color: #fdf6e3;
+  /* Solarized Light Base2 or parchment */
+  border: 1px solid #d6c6ac;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.ancient-book-card::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: #e0d4bc;
+  z-index: 10;
+}
+
+.ancient-folder {
+  background-color: #fdf6e3;
+  border: 1px solid #d6c6ac;
+  position: relative;
+  z-index: 10;
+}
+
+.ancient-folder::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 4px;
+  right: -4px;
+  height: 100%;
+  background-color: #fbf1da;
+  border: 1px solid #d6c6ac;
+  border-radius: 0.75rem;
+  z-index: -1;
+}
+
+.ancient-folder::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 8px;
+  right: -8px;
+  height: 100%;
+  background-color: #f5ebd0;
+  border: 1px solid #d6c6ac;
+  border-radius: 0.75rem;
+  z-index: -2;
+}
+
+.ancient-tag {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: 2px;
+}
+
+/* E-Ink Mode Image Optimization */
+.reader-theme-e-ink img,
+.reader-theme-e-ink video {
+  filter: grayscale(100%) contrast(120%);
+  mix-blend-mode: multiply; /* Better simulation of ink on paper */
+}
